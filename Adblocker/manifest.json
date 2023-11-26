@@ -1,0 +1,28 @@
+{
+    "name" : "Funky Adblocker",
+    "version" : "1.0",
+    "manifest_version" : 3,
+    "description" : "Just a Funky Adblocker, because Ads suck",
+    "permissions" : ["declarativeNetRequest", "webRequest"],
+    "icons": {
+        "16": "icons/logo_16x16.png",
+        "48": "icons/logo_48x48.png",
+        "128": "icons/logo_128x128.png"
+    },
+    "declarative_net_request" :{
+        "rule_resources": [
+            {
+            "id": "ruleset_1",
+            "enabled": true,
+            "path": "rules.json"
+            }
+        ]
+    },
+    "content_scripts":[
+        {
+            "matches": ["*://*.youtube.com/*"],
+            "css":[],
+            "js": ["content.js"]
+        }
+    ]
+}
